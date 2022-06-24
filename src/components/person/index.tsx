@@ -7,10 +7,10 @@ const Person = (props: personType) => {
             <td>{props.id}</td>
             <td>{props.name}</td>
             <td>{props.phoneNumber}</td>
-            <td><Button text="delete" bootstrapClasses={["btn", "btn-danger", "btn-sm", "mx-1"]}
-                onClickHandler={() => props.handleDelete(props.id)} /></td>
-            <td><Button text="edit" bootstrapClasses={["btn", "btn-sm", "btn-info", "mx-1"]}
-                onClickHandler={() => props.handleEdit(props.id)} /></td>
+            <td><Button text="delete" bootstrapClasses={["btn","btn-sm","rounded-0","btn-outline-danger", "mx-1"]}
+                onClickHandler={() => props.handleDelete(props.id)} />
+                <Button text="edit" bootstrapClasses={["btn", "btn-outline-info","rounded-0", "btn-sm", "mx-1"]}
+                    onClickHandler={() => props.handleEdit(props.id)} /></td>
         </tr>
     );
 }
