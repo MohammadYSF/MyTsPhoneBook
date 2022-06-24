@@ -1,5 +1,7 @@
 export type personType ={
-    id:Number
+    id:number
     name:string,
-    phoneNumber:string
+    phoneNumber:string,
+    handleEdit:(id:number) => void,
+    handleDelete:(id:number) => void
 };
