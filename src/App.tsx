@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import People from './components/people';
 import Person from './components/person';
+import Button from './components/button';
 function App() {
   const deletePerson = (id:number):void =>{
     console.log(`deleting person with id : ${id}`);
@@ -13,10 +14,11 @@ function App() {
   return (
     <div className="App">
       <div className='container'>
-        <div className='text-center'>
+        <div className='text-center my-5'>
           <h1 className='h1'>My ts phone book</h1>
           <p>this is a simple phone book !</p>
           <p>I have used these technologies to build this app : React , Typescript , Bootstrap</p>
+          <Button text='add new !' bootstrapClasses={["btn" , "btn-success" , "px-5 py-1"]} type="button"/>
         </div>
         <div className='text-center'>
           <People bootstrapTableClasses={["table","table-striped"]} >

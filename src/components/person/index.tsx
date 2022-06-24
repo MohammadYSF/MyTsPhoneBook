@@ -8,9 +8,9 @@ const Person = (props: personType) => {
             <td>{props.name}</td>
             <td>{props.phoneNumber}</td>
             <td><Button text="delete" bootstrapClasses={["btn","btn-sm","rounded-0","btn-outline-danger", "mx-1"]}
-                onClickHandler={() => props.handleDelete(props.id)} />
+                onClickHandler={() => props.handleDelete(props.id)}  type="button"/>
                 <Button text="edit" bootstrapClasses={["btn", "btn-outline-info","rounded-0", "btn-sm", "mx-1"]}
-                    onClickHandler={() => props.handleEdit(props.id)} /></td>
+                    onClickHandler={() => props.handleEdit(props.id)}  type="button"/></td>
         </tr>
     );
 }
