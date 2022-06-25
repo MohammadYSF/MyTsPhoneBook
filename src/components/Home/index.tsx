@@ -14,8 +14,8 @@ const Home = () => {
 
     return (
         <div className="App">
-            <div className='container'>
-                <div className='text-center my-5'>
+     
+                <div className='my-5'>
                     <h1 className='h1'>My ts phone book</h1>
                     <p>this is a simple phone book !</p>
                     <p>I have used these technologies to build this app : React , Typescript , Bootstrap</p>
@@ -30,7 +30,7 @@ const Home = () => {
                         <Person id={2} name="zolfian" phoneNumber='09141257762' handleDelete={deletePerson} handleEdit={editPerson} />
                     </People>
                 </div>
-            </div>
+        
         </div>
 
     );
