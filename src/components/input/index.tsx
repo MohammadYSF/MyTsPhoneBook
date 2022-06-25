@@ -11,12 +11,14 @@ const Input = (props: inputProps) => {
                     id={props.elementId && props.elementId}
                     value={props.value && props.value}
                     placeholder={props.placeHolder}
+                    onChange = {props.handleChange}
                 />
                 :
                 <input required type={props.type} className="form-control"
                     id={props.elementId && props.elementId}
                     value={props.value && props.value}
                     placeholder={props.placeHolder}
+                    onChange={props.handleChange}
                 />}
         </div>
     );
