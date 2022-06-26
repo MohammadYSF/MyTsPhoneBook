@@ -38,18 +38,40 @@ function App() {
     },
   ]
   const [people, setPeople] = useState<person[]>(data);
+  const findPersonById = (id: number): person => {
+    let target: person = {} as person;
+    for (let i: number = 0; i < people.length; i++) {
+      const p: person = people[i];
+      if (p.id === id) {
+        target = p;
+        return target;
+      }
+    }
+    return {} as person;
+  };
   const addNewPerson = (p: person): void => {
     let newData: person[] = [...people, p];
     setPeople(newData);
     console.log(people);
-    
+
+  };
+  const deletePerson = (id: number): void => {
+    let target: person = findPersonById(id);
+    let text: string = `Are you sure you want to delete "${target.name}" ?`;
+    if (window.confirm(text) === true) {
+      let newData: person[] = people.filter(p => p.id != id);
+      setPeople(newData);
+    }
+  };
+  const editPerson = (id: number): void => {
+    console.log("editting person with id : ", id);
   }
   return (
     <div className='container text-center'>
       <BrowserRouter>
         <Routes>
-          <Route element={<Home data={people}/>} path="/" />
-          <Route element={<NewContactForm onSubmit={addNewPerson}/>} path="/addNew" />
+          <Route element={<Home data={people} handleDelete={deletePerson} handleEdit={editPerson} />} path="/" />
+          <Route element={<NewContactForm onSubmit={addNewPerson} />} path="/addNew" />
         </Routes>
       </BrowserRouter>
     </div>

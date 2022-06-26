@@ -5,14 +5,8 @@ import Button from '../button';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { personType } from '../../types/person.types';
-const Home = (props:{data:personType[]}) => {
-   
-    const deletePerson = (id: number): void => {
-        console.log(`deleting person with id : ${id}`);
-    }
-    const editPerson = (id: number): void => {
-        console.log(`editting person with id : ${id}`);
-    }
+const Home = (props:{data:personType[] , handleDelete:(id:number) => void , handleEdit:(id:number) => void}) => {
+
 
     return (
         <div className="App">
@@ -30,7 +24,7 @@ const Home = (props:{data:personType[]}) => {
                     {props.data.map((p, index) => {
                         return (
                             <Person id={p.id} name={p.name} phoneNumber={p.phoneNumber}
-                                handleDelete={deletePerson} handleEdit={editPerson} />
+                                handleDelete={props.handleDelete} handleEdit={props.handleEdit} />
                         );
                     })}
                 </People>
